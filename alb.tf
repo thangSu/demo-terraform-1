@@ -22,7 +22,7 @@ resource "aws_lb" "test_lb" {
   ip_address_type = "ipv4"
   load_balancer_type = "application"
   security_groups = [ aws_security_group.ec2_sg.id  ]
-  subnets            = [module.thang_vpc.subnet_id[0]]
+  subnets            = [for subnet in module.thang_vpc.subnet_id: subnet.subnet_id]
   tags = {
     Environment = "test"
   }
