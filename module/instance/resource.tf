@@ -26,6 +26,6 @@ resource "aws_instance" "instance" {
                 sudo yum update -y
                 sudo yum install httpd -y
                 sudo service httpd start
-                sudo bash -c  "echo I did it successfully ${var.name_ec2} > /var/www/html/index.html"
+                sudo bash -c  "echo '<center><h1>I did it successfully ${var.name_ec2}</h1></center>' > /var/www/html/index.html"
                 EOF
 }
