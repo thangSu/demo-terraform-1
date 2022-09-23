@@ -42,6 +42,6 @@ module "thang_instance" {
     security_list=[aws_security_group.ec2_sg.id]
     subnet= module.thang_vpc.subnet_id[0]
     key_pair = "thangpham"
-    name_ec2 = "${var.name_instance[count.index]}"
+    name_ec2 = "${var.name_ec2[count.index]}"
 }
 
