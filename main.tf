@@ -37,11 +37,11 @@ resource "aws_security_group" "ec2_sg" {
 }
 
 module "thang_instance" {
-    count = length(var.name_ec2)
+    count = length(var.name_instance)
     source = "./module/instance"
     security_list=[aws_security_group.ec2_sg.id]
     subnet= module.thang_vpc.subnet_id[0]
     key_pair = "thangpham"
-    name_ec2 = "${var.name_ec2[count.index]}"
+    name_ec2 = "${var.name_instance[count.index]}"
 }
 
