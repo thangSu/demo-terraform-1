@@ -20,7 +20,7 @@ resource "aws_lb" "test_lb" {
   name               = "test-lb"
   internal           = false
   ip_address_type = "ipv4"
-  load_balancer_type = "applicantion"
+  load_balancer_type = "application"
   security_groups = [ aws_security_group.ec2_sg.id  ]
   subnets            = [module.thang_vpc.subnet_id[0]]
   tags = {
